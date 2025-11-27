@@ -1,4 +1,5 @@
 [versions]
+spatialsdk = "0.9.0"
 agp = "8.13.0"
 kotlin = "2.2.20"
 coreKtx = "1.17.0"
@@ -11,6 +12,21 @@ composeBom = "2025.10.00"
 composeMaterialAdaptive = "1.1.0"
 
 [libraries]
+# Meta Spatial SDK Libraries
+meta-spatial-sdk-base = { group = "com.meta.spatial", name = "meta-spatial-sdk", version.ref = "spatialsdk" }
+meta-spatial-sdk-vr = { group = "com.meta.spatial", name = "meta-spatial-sdk-vr", version.ref = "spatialsdk" }
+meta-spatial-sdk-animation = { group = "com.meta.spatial", name = "meta-spatial-sdk-animation", version.ref = "spatialsdk" }
+meta-spatial-sdk-compose = { group = "com.meta.spatial", name = "meta-spatial-sdk-compose", version.ref = "spatialsdk" }
+meta-spatial-sdk-ovrmetrics = { group = "com.meta.spatial", name = "meta-spatial-sdk-ovrmetrics", version.ref = "spatialsdk" }
+meta-spatial-sdk-physics = { group = "com.meta.spatial", name = "meta-spatial-sdk-physics", version.ref = "spatialsdk" }
+meta-spatial-sdk-toolkit = { group = "com.meta.spatial", name = "meta-spatial-sdk-toolkit", version.ref = "spatialsdk" }
+meta-spatial-sdk-mruk = { group = "com.meta.spatial", name = "meta-spatial-sdk-mruk", version.ref = "spatialsdk" }
+meta-spatial-sdk-castinputforward = { group = "com.meta.spatial", name = "meta-spatial-sdk-castinputforward", version.ref = "spatialsdk" }
+meta-spatial-sdk-hotreload = { group = "com.meta.spatial", name = "meta-spatial-sdk-hotreload", version.ref = "spatialsdk" }
+meta-spatial-sdk-datamodelinspector = { group = "com.meta.spatial", name = "meta-spatial-sdk-datamodelinspector", version.ref = "spatialsdk" }
+meta-spatial-sdk-isdk = { group = "com.meta.spatial", name = "meta-spatial-sdk-isdk", version.ref = "spatialsdk" }
+meta-spatial-sdk-spatialaudio = { group = "com.meta.spatial", name = "meta-spatial-sdk-spatialaudio", version.ref = "spatialsdk" }
+
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
@@ -31,4 +47,5 @@ androidx-material3-adaptive = { group = "androidx.compose.material3.adaptive", n
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+meta-spatial-plugin = { id = "com.meta.spatial.plugin", version.ref = "spatialsdk" }
 

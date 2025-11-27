@@ -18,6 +18,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.meta.spatial.plugin)
 }
 
 android {
@@ -72,4 +73,37 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
+    // Meta Spatial SDK libs
+    implementation(libs.meta.spatial.sdk.base)
+    implementation(libs.meta.spatial.sdk.ovrmetrics)
+    implementation(libs.meta.spatial.sdk.toolkit)
+    implementation(libs.meta.spatial.sdk.vr)
+    implementation(libs.meta.spatial.sdk.castinputforward)
+    implementation(libs.meta.spatial.sdk.hotreload)
+    implementation(libs.meta.spatial.sdk.datamodelinspector)
+}
+
+val projectDir = layout.projectDirectory
+val sceneDirectory = projectDir.dir("scenes")
+
+spatial {
+    allowUsageDataCollection.set(true)
+    scenes {
+        // if you have installed Meta Spatial Editor somewhere else, update the file path.
+
+        // cliPath.set("/Applications/Meta Spatial Editor.app/Contents/MacOS/CLI")
+
+        exportItems {
+            item {
+                projectPath.set(sceneDirectory.file("Main.metaspatial"))
+                outputPath.set(projectDir.dir("src/main/assets/scenes"))
+            }
+        }
+        hotReload {
+            appPackage.set("com.meta.spatial.samples.customcomponentsstarter")
+            appMainActivity.set(".CustomComponentsStarterActivity")
+            assetsDir.set(File("src/main/assets"))
+        }
+    }
 }
