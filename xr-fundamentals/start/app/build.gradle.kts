@@ -53,7 +53,14 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
+    flavorDimensions += "device"
+    productFlavors {
+        create("androidxr") { dimension = "device" }
+        create("quest") { dimension = "device" }
+    }
+
 }
 
 dependencies {
@@ -76,9 +83,11 @@ dependencies {
 
     // Meta Spatial SDK libs
     implementation(libs.meta.spatial.sdk.base)
+    implementation(libs.meta.spatial.sdk.base)
     implementation(libs.meta.spatial.sdk.ovrmetrics)
     implementation(libs.meta.spatial.sdk.toolkit)
     implementation(libs.meta.spatial.sdk.vr)
+    implementation(libs.meta.spatial.sdk.compose)
     implementation(libs.meta.spatial.sdk.castinputforward)
     implementation(libs.meta.spatial.sdk.hotreload)
     implementation(libs.meta.spatial.sdk.datamodelinspector)
