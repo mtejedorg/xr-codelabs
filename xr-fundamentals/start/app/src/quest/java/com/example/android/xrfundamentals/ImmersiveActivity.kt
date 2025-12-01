@@ -5,7 +5,8 @@
 import android.net.Uri
 import android.os.Bundle
 import androidx.compose.ui.platform.ComposeView
-import com.example.android.xrfundamentals.ui.theme.XRFundamentalsTheme
+import com.meta.spatial.compose.ComposeFeature
+import com.meta.spatial.physics.PhysicsFeature
 import com.meta.spatial.compose.ComposeViewPanelRegistration
 import com.meta.spatial.core.Entity
 import com.meta.spatial.core.Pose
@@ -32,9 +33,7 @@ class ImmersiveActivity : AppSystemActivity() {
   private val activityScope = CoroutineScope(Dispatchers.Main)
 
   override fun registerFeatures(): List<SpatialFeature> {
-    return listOf(
-        VRFeature(this)
-    )
+      return listOf(VRFeature(this), PhysicsFeature(spatial), ComposeFeature())
   }
 
   override fun onCreate(savedInstanceState: Bundle?) {
@@ -62,7 +61,7 @@ class ImmersiveActivity : AppSystemActivity() {
           environment.setComponent(environmentMesh)
 
             Entity.createPanelEntity(
-                R.id.xr_fundamentals,
+                R.id.ui_example,
                 Transform(Pose(Vector3(0.0f, 0.0f, -1.0f))),
             )
 
@@ -83,7 +82,7 @@ class ImmersiveActivity : AppSystemActivity() {
   override fun registerPanels(): List<PanelRegistration> {
     return listOf(
         ComposeViewPanelRegistration(
-            R.id.xr_fundamentals,
+            R.id.ui_example,
             composeViewCreator = { _, ctx ->
                 ComposeView(ctx).apply { setContent { XRFundamentalsApp() } }
             },

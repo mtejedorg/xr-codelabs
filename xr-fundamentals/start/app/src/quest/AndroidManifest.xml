@@ -58,7 +58,7 @@
             android:name="libossdk.oculus.so"
             android:required="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".ImmersiveActivity"
             android:configChanges="orientation|screenSize|screenLayout|smallestScreenSize|density|uiMode|keyboardHidden|keyboard|navigation"
             android:excludeFromRecents="false"
             android:exported="true"
