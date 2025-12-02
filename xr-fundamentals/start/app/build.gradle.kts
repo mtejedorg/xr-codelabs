@@ -111,8 +111,8 @@ spatial {
             }
         }
         hotReload {
-            appPackage.set("com.meta.spatial.samples.customcomponentsstarter")
-            appMainActivity.set(".CustomComponentsStarterActivity")
+            appPackage.set("com.example.android.xrfundamentals")
+            appMainActivity.set(".ImmersiveActivity")
             assetsDir.set(File("src/main/assets"))
         }
     }
